@@ -5,7 +5,7 @@ metadata:
   name: k3s-default
 servers: 1
 agents: 3
-#image: docker.io/rancher/k3s:v1.22.7-k3s1
+image: docker.io/rancher/k3s:v1.22.7-k3s1
 ports:
   - port: 80:80
     nodeFilters:
