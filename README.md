@@ -1,5 +1,5 @@
 * Dependencies: `k3d`, `helm`, and `make`.
-* `make up` will create a k3d cluster with two workers, setup ingress and the kubernetes dashboard.
+* `make up` will create a k3d cluster with three workers, setup ingress and the kubernetes dashboard.
 
 ## Useful things
 * Images from your local docker installation are not automatially available inside the cluser. Run `k3d image import <local_image_name>` to get them inside.
