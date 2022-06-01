@@ -5,6 +5,7 @@
 * Images from your local docker installation are not automatially available inside the cluser. Run `k3d image import <local_image_name>` to get them inside.
     * Alternatively, you can `docker tag` and `docker push` them to `registry.127.0.0.1.nip.io:12345`.
 * `host.k3d.internal` is the address of the host running docker from inside the cluster.
+* Ingress for services should work properly. Set the hostname of the ingress to a subdomain of 127.0.0.1.nip.io and it should just work.
 * If you want to expose services without ingress you should:
     * Set them up as a loadBalancer type service.
     * Run `k3d node edit k3d-k3s-default-serverlb --port-add <host_port>:<cluster_target_port>` to expose the port on the load balancer to the local machine.
