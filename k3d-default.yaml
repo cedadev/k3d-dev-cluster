@@ -1,0 +1,22 @@
+---
+apiVersion: k3d.io/v1alpha4
+kind: Simple
+metadata:
+  name: k3s-default
+servers: 1
+agents: 3
+#image: docker.io/rancher/k3s:v1.22.7-k3s1
+ports:
+  - port: 80:80
+    nodeFilters:
+      - loadbalancer
+  - port: 443:443
+    nodeFilters:
+      - loadbalancer
+subnet: "10.99.0.0/16"
+options:
+  k3s:
+    extraArgs:
+      - arg: --no-deploy=traefik
+        nodeFilters:
+          - server:*
